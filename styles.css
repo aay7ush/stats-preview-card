@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+
+:root {
+  /* Colors */
+  --bg-color: hsl(233, 47%, 7%);
+  --card-bg-color: hsl(244, 38%, 16%);
+  --accent-color: hsl(277, 64%, 61%);
+  --light-accent-color: rgba(89, 18, 133, 0.633);
+  --bold-white: hsl(0, 0%, 100%);
+  --medium-white: hsla(0, 0%, 100%, 0.75);
+  --light-white: hsla(0, 0%, 100%, 0.6);
+}
+
+/* General Styles */
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--medium-white);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+
+  display: grid;
+  place-content: center;
+}
+
+h1,
+h2 {
+  color: var(--bold-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+span {
+  color: var(--accent-color);
+}
+
+/* Stats Section */
+
+.stats {
+  display: grid;
+  text-align: center;
+  max-width: 80vw;
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stats__img {
+  position: relative;
+}
+
+.stats__img::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-accent-color);
+}
+
+.stats__content {
+  display: grid;
+  gap: 1.3rem;
+  padding: 2rem;
+}
+
+.stats__body {
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+
+.stats__items {
+  display: grid;
+  gap: 1.3rem;
+}
+
+.stats__items p {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding-top: 0.5rem;
+  color: var(--light-white);
+  text-transform: uppercase;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 640px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats__img {
+    order: 1;
+  }
+
+  .stats__img img {
+    min-height: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .stats {
+    text-align: start;
+    max-width: 80vw;
+  }
+
+  .stats__content {
+    padding: calc(5vw);
+    font-size: 1.8vw;
+  }
+
+  .stats__img img {
+    content: url(images/image-header-desktop.jpg);
+  }
+
+  .stats__items {
+    display: flex;
+    justify-content: space-between;
+  }
+}
